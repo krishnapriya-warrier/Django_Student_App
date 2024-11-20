@@ -1,0 +1,60 @@
+{% extends 'navheader.html' %}
+{% block content %}
+       
+
+          
+<h2 class="text-center mb-4">Student-Admissions-2024</h2>
+<table class="table table-primary table-bordered w-100 mt-3 text-center">
+    <thead>
+                
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Course</th>
+            <th>Profile Image</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+    {% for i in data %}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.age}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.phone_number}}</td>
+            <td>{{i.course}}</td>
+            <td>
+                <img src="{{i.profile_picture.url}}" alt="student_image" style="height: 150px; width: 150px;" class="rounded-circle">
+            </td>
+
+                    
+                    
+
+            <td>
+                <a href="{% url 'edit' i.id %}" class="btn">
+                    <i class="fa-solid fa-pen-to-square" style="color: #293242;"></i></i>
+                </a>
+            </td>
+            <td>
+                <a href="{% url 'delete' i.id %}" class="btn">
+                    <i class="fa-solid fa-trash" style="color: #ff0000;"></i>
+                </a>
+                        
+            </td>
+        </tr>
+                    
+                 
+    {% endfor %}
+                    
+                
+    </tbody>
+            
+</table>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'navheader.html' %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+<div class="text-center mb-5 text-secondary">
+    <h1>Welcome to Student Management System</h1>
+    <p>Manage your student's details effortlessly using this platform...</p>
+    <a href="{% url 'add' %}" class="btn btn-primary btn-lg mx-2">Add Students</a>
+    <a href="{% url 'students' %}" class="btn btn-success btn-lg mx-2">Student Admissions</a>
+</div>
+<div class="d-flex justify-content-center align-items-center">
+    <img src="https://wpschoolpress.com/wp-content/uploads/2023/03/student-management-system.png" 
+         style="height: 450px;" 
+         alt="homeimage" 
+         class="img-fluid">
+</div>
+{% endblock %}  
+
+
+
